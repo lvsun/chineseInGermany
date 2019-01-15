@@ -1,24 +1,22 @@
-output_man_file_name = 'baden_man.csv'
-output_woman_file_name = 'baden_woman.csv'
+import pandas as pd
+
+input_csv_file_name = './csv/chinese_all.csv'
 try:
-  input_csv_file = open('/Users/lvsun/Downloads/chineseInGermany/baden.csv', mode='r', encoding='ISO-8859-1')
-  output_man_csv_file = open(output_man_file_name, mode='w')
-  output_woman_csv_file = open(output_woman_file_name, mode='w')
-
-  count = 0
-  for line in input_csv_file:
-    cols = line.split(';')
-    if count == 1:
-      for index, col in enumerate(cols):
-        if col == '17':
-          print(col)
-        if col == '33\n':
-          print(col)
-        print(str(col) + str(index))
-    count += 1
-
-  print(count)
+  # input_csv_file = open(input_csv_file_name, mode='r', encoding='ISO-8859-1')
+  # count = 0
+  # for line in input_csv_file:
+  #   cols = line.split(';')
+  #   if count == 1:
+  #     for index, col in enumerate(cols):
+  #       if col == '17':
+  #         print(col)
+  #       if col == '33\n':
+  #         print(col)
+  #       print(str(col) + str(index))
+  #   count += 1
+  # print(count)
+  df = pd.read_csv(input_csv_file_name, sep=';', encoding='ISO-8859-1')
+  print(df.head(10))
 finally:
-  input_csv_file.close()
-  output_man_csv_file.close()
-  output_woman_csv_file.close()
+  # input_csv_file.close()
+  print('Finished')
