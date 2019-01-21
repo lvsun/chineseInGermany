@@ -15,8 +15,14 @@ try:
   #       print(str(col) + str(index))
   #   count += 1
   # print(count)
-  df = pd.read_csv(input_csv_file_name, sep=';', encoding='ISO-8859-1')
+
+  dtype_dict = {
+    'hessen_man': float,
+    'baden_man': float
+  }
+  df = pd.read_csv(input_csv_file_name, sep=';', encoding='ISO-8859-1', dtype=dtype_dict, na_values='-')
   print(df.head(10))
+  print(df.dtypes)
 finally:
   # input_csv_file.close()
   print('Finished')
