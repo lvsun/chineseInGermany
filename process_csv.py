@@ -25,12 +25,12 @@ try:
   #######################################
   # select the chinese for studies
   #######################################
-  print("index  date  berlin_man    berlin_woman    bayern_man    bayern_woman")
+  print("index      date  berlin_man berlin_woman bayern_man bayern_woman")
   for index, row in df.iterrows():
     if (index % 13) == 4:
       
       print(
-        "{index}  {date}  {berlin_man}    {berlin_woman}    {bayern_man}    {bayern_woman}".format(
+        "{index:>3}  {date:>10} {berlin_man:>10} {berlin_woman:>10} {bayern_man:>10} {bayern_woman:>10}".format(
           index=index,
           date=row['date'],
           berlin_man=row['berlin_man'],
