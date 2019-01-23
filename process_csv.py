@@ -21,8 +21,25 @@ try:
     'baden_man': float
   }
   df = pd.read_csv(input_csv_file_name, sep=';', encoding='ISO-8859-1', dtype=dtype_dict, na_values='-')
-  print(df.head(10))
-  print(df.dtypes)
+
+  #######################################
+  # select the chinese for studies
+  #######################################
+  print("index  date  berlin_man    berlin_woman    bayern_man    bayern_woman")
+  for index, row in df.iterrows():
+    if (index % 13) == 4:
+      
+      print(
+        "{index}  {date}  {berlin_man}    {berlin_woman}    {bayern_man}    {bayern_woman}".format(
+          index=index,
+          date=row['date'],
+          berlin_man=row['berlin_man'],
+          berlin_woman=row['berlin_woman'],
+          bayern_man = row['bayern_man'],
+          bayern_woman = row['bayern_woman']
+        )
+      )
+
 finally:
   # input_csv_file.close()
   print('Finished')
