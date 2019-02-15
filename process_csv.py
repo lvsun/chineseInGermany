@@ -28,7 +28,40 @@ try:
   print("index      date  berlin_man berlin_woman bayern_man bayern_woman")
   for index, row in df.iterrows():
     if (index % 13) == 4:
+      print(
+        "{index:>3}  {date:>10} {berlin_man:>10} {berlin_woman:>10} {bayern_man:>10} {bayern_woman:>10}".format(
+          index=index,
+          date=row['date'],
+          berlin_man=row['berlin_man'],
+          berlin_woman=row['berlin_woman'],
+          bayern_man = row['bayern_man'],
+          bayern_woman = row['bayern_woman']
+        )
+      )
+
+  #######################################
+  # select the chinese with green cards
+  #######################################
+  print("index      date  berlin_man berlin_woman bayern_man bayern_woman")
+  for index, row in df.iterrows():
+    if (index % 13) == 2:
+      print(
+        "{index:>3}  {date:>10} {berlin_man:>10} {berlin_woman:>10} {bayern_man:>10} {bayern_woman:>10}".format(
+          index=index,
+          date=row['date'],
+          berlin_man=row['berlin_man'],
+          berlin_woman=row['berlin_woman'],
+          bayern_man = row['bayern_man'],
+          bayern_woman = row['bayern_woman']
+        )
+      )
       
+  #######################################
+  # select the chinese with time-limited visa 
+  #######################################
+  print("index      date  berlin_man berlin_woman bayern_man bayern_woman")
+  for index, row in df.iterrows():
+    if (index % 13) == 3:
       print(
         "{index:>3}  {date:>10} {berlin_man:>10} {berlin_woman:>10} {bayern_man:>10} {bayern_woman:>10}".format(
           index=index,
