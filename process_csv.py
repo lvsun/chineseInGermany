@@ -1,6 +1,8 @@
 import pandas as pd
 
 input_csv_file_name = './csv/chinese_all.csv'
+dates = []
+berlin_man_number = []
 try:
   # input_csv_file = open(input_csv_file_name, mode='r', encoding='ISO-8859-1')
   # count = 0
@@ -28,6 +30,8 @@ try:
   print("index      date  berlin_man berlin_woman bayern_man bayern_woman")
   for index, row in df.iterrows():
     if (index % 13) == 4:
+      dates.append(row['date'])
+      berlin_man_number.append(row['berlin_man'])
       print(
         "{index:>3}  {date:>10} {berlin_man:>10} {berlin_woman:>10} {bayern_man:>10} {bayern_woman:>10}".format(
           index=index,
@@ -75,4 +79,6 @@ try:
 
 finally:
   # input_csv_file.close()
+  print(dates)
+  print(berlin_man_number)
   print('Finished')
