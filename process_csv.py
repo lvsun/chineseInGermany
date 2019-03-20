@@ -77,6 +77,8 @@ try:
         )
       )
 
+  # try to visualize the data
+  
 finally:
   # input_csv_file.close()
   print(dates)
