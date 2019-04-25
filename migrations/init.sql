@@ -13,10 +13,16 @@ CREATE TABLE viz.country (
     name varchar(20)
 )
 
--- table state
+-- table german state
 CREATE TABLE viz.state (
     id integer,
     name varchar(25)
+)
+
+-- visum title
+CREATE TABLE viz.visum_title (
+    id integer,
+    name text
 )
 
 
