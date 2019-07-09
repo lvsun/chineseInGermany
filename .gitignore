@@ -3,3 +3,4 @@ frontend-app/i4s/node_modules
 frontend-app/i4s/node_modules/
 *~
 *swp
+.DS_Store
