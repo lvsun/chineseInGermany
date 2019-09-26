@@ -1,3 +1,11 @@
+terraform {
+  backend "gcs" {
+    bucket      = "peisun-terraform-bucket"
+    prefix      = "terraform"
+    credentials = "~/.ssh/gcp-peisun-project.json"
+  }
+}
+
 provider "google" {
   project = "windy-collector-247209"
   region  = "europe-west4"
