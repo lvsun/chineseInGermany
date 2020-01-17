@@ -47,7 +47,7 @@ resource "google_compute_firewall" "allow_ssh" {
   name          = "vm-allow-ssh"
   network       = "${google_compute_network.vpc_network.name}"
   direction     = "INGRESS"
-  source_ranges = ["84.143.148.143/32"]
+  source_ranges = ["84.143.0.0/16"]
 
   allow {
     protocol = "tcp"
